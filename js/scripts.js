@@ -32,10 +32,9 @@ var pingpong = function(){
 $(document).ready(function() {
   $("form#number").submit(function(event) {
     event.preventDefault();
-    debugger;
     input = parseInt($("input#number").val());
     $("#result").empty();
-    number = [];
+    numbers = [];
     game(input);
     pingpong();
     $("#result").show(function() {
