@@ -2,9 +2,9 @@
 var input;
 var number = [];
 
-var pingpong = function(input) {
+var game = function(input) {
   if (input >100) {
-    alert("Please enter a number smaller than 100");
+    alert("Enter a number smaller than 100");
   } else {
     for (index = 0; index<=input; index += 1) {
         number.push(index);
@@ -13,19 +13,23 @@ var pingpong = function(input) {
   }
 }
 
+var
 
-//Ui logic
+//Ui logic 
 $(document).ready(function() {
-  $("#numbers").submit(function(event) {
+  $("form#number").submit(function(event) {
     event.preventDefault();
-    //debugger;
-    var countTo = parseInt($("#number1").val());
-    var countBy = parseInt($("#number2").val());
-
-    var countingNumber = Math.floor(countTo/countBy);
+    debugger;
+    input = parseInt($("input#number").val());
+    $"#result").empty();
+    number = [];
+    game(input);
+    pingpong(input);
+    $('#result').click(function() {
+      location.reload();
+    }
 
     //callback function
-    bizLogic(countingNumber, countBy);
 
   });
 });
