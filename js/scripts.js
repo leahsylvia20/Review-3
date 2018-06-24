@@ -14,7 +14,9 @@ var game = function(input) {
 }
 
 var pingpong = function(){
-  
+  number.map(function(numbers){
+    $("#result").append("<li>" + "Your results:" + "<li>");
+  }
 }
 
 //Ui logic
