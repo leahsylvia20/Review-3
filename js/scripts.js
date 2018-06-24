@@ -13,9 +13,11 @@ var game = function(input) {
   }
 }
 
-var
+var pingpong = function(){
+  
+}
 
-//Ui logic 
+//Ui logic
 $(document).ready(function() {
   $("form#number").submit(function(event) {
     event.preventDefault();
