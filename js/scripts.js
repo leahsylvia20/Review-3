@@ -2,30 +2,31 @@
 var input;
 var number = [];
 
-var game = function(input) {
-  if (input >100) {
+var game = function (input) {
+  if (input > 100) {
     alert("Enter a number smaller than 100");
   } else {
     for (index = 0; index<=input; index += 1) {
         number.push(index);
-      $(".results").show(index);
     }
   }
 }
 
 var pingpong = function(){
-  number.map(function(numbers){
-    $("#result").append("<li>" + "Your results:" + "<li>");
-  } else if (number % 15 === 0) {
-    $("#result").append("<li>" + "pingpong" + "</li>");
-  } else if (number % 5 === 0) {
-    $("#result").append("<li>" + "pong" + "</li>");
-  } else if (number % 3 === 0) {
-    $("#result").append("<li>" + "ping" + "</li>");
-  } else {
-    $("#result").append("<li>" + "numbers" + "</li>");
+    number.map(function(numbers){
+    if (numbers === 0) {
+      $("#result").append("<li>" + "Your results:" + "<li>");
+    } else if (number % 15 === 0) {
+      $("#result").append("<li>" + "pingpong" + "</li>");
+    } else if (number % 5 === 0) {
+      $("#result").append("<li>" + "pong" + "</li>");
+    } else if (number % 3 === 0) {
+      $("#result").append("<li>" + "ping" + "</li>");
+    } else {
+      $("#result").append("<li>" + "numbers" + "</li>");
+    }
   }
-}
+)};
 
 //Ui logic
 $(document).ready(function() {
@@ -33,15 +34,15 @@ $(document).ready(function() {
     event.preventDefault();
     debugger;
     input = parseInt($("input#number").val());
-    $"#result").empty();
+    $("#result").empty();
     number = [];
     game(input);
-    pingpong(input);
-    $('#result').click(function() {
+    pingpong();
+    $("#result").show(function() {
       location.reload();
-    }
+    });
 
     //callback function
 
-  });
+});
 });
