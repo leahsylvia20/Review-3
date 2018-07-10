@@ -23,7 +23,7 @@ var pingpong = function(){
     } else if (numbers % 3 === 0) {
       $("#result").append("<li>" + "ping" + "</li>");
     } else {
-      $("#result").append("<li>" + "numbers" + "</li>");
+      $("#result").append("<li>" + numbers + "</li>");
     }
   }
 )};
@@ -33,7 +33,6 @@ $(document).ready(function() {
   $("form#number").submit(function(event) {
     event.preventDefault();
     input = parseInt($("input#number").val());
-    $("#result").empty();
     numbers = [];
     game(input);
     pingpong();
